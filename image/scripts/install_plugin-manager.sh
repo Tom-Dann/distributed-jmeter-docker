@@ -9,8 +9,5 @@ wget -O "lib/cmdrunner-2.0.jar" $CMD_RUNNER_URL
 # DOWNLOAD MANAGER
 wget -O "lib/ext/jmeter-plugins-manager.jar" $PLUGIN_MANAGER_URL
 
-
 # GENERATING SCRIPTS
 java -cp lib/ext/jmeter-plugins-manager.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
-
-

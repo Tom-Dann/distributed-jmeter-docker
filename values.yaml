@@ -17,8 +17,8 @@ image:
 
   ## The repository and image
   ## ref: https://hub.docker.com/r/pedrocesarti/jmeter-docker/
-  repository: "pedrocesarti/jmeter-docker"
+  repository: "tomdann/jmeter"
 
   ## The tag for the image
   ## ref: https://hub.docker.com/r/pedrocesarti/jmeter-docker/tags/
-  tag: 3.3
+  tag: "ce63d89b7e8f"
