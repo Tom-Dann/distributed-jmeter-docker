@@ -32,3 +32,14 @@ spec:
           ports:
             - containerPort: 50000
             - containerPort: 1099
+          env:
+            - name: HEAP
+              value: "-XX:+UseContainerSupport -XX:MaxRAMPercentage={{ .Values.server.memory.maxPercentage }} -XX:MaxMetaspaceSize={{ .Values.server.memory.maxMetaspace }}"
+          resources:
+            requests:
+              memory: {{ .Values.server.memory.request }}
+              cpu: {{ .Values.server.cpu.request }}
+            limits:
+              memory: {{ .Values.server.memory.limit }}
+      nodeSelector:
+        pool: performance

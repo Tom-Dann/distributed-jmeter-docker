@@ -1,0 +1,13 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: jmeter-pdb
+  labels:
+    app.kubernetes.io/name: {{ include "distributed-jmeter.name" . }}
+    helm.sh/chart: {{ include "distributed-jmeter.chart" . }}
+spec:
+  maxUnavailable: {{ .Values.disruption.maxUnavailable }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "distributed-jmeter.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
