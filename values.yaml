@@ -5,20 +5,35 @@
 master:
   ## The number of pods in the master deployment
   replicaCount: 1
+  cpu:
+    ## kubernetes cpu settings
+    request: "1"
+  memory:
+    ## kubernetes memory settings
+    request: "4Gi"
+    limit: "4Gi"
+    ## JVM heap memory settings
+    maxPercentage: "75.0"
+    maxMetaspace: "256m"
 
 server:
   ## The number of pods in the server deployment
   replicaCount: 3
+  cpu:
+    ## kubernetes cpu settings
+    request: "2500m"
+  memory:
+    ## kubernetes memory settings
+    request: "8Gi"
+    limit: "8Gi"
+    ## JVM heap memory settings
+    maxPercentage: "70.0"
+    maxMetaspace: "1024m"
 
 image:
-  ## Specify an imagePullPolicy
-  ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
   pullPolicy: IfNotPresent
-
-  ## The repository and image
-  ## ref: https://hub.docker.com/r/pedrocesarti/jmeter-docker/
   repository: "tomdann/jmeter"
-
-  ## The tag for the image
-  ## ref: https://hub.docker.com/r/pedrocesarti/jmeter-docker/tags/
   tag: "5.4.1"
+
+disruption:
+  maxUnavailable: 0
