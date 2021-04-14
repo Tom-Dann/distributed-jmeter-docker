@@ -41,5 +41,3 @@ spec:
               cpu: {{ .Values.master.cpu.request }}
             limits:
               memory: {{ .Values.master.memory.limit }}
-      nodeSelector:
-        pool: performance
