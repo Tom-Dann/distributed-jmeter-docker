@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-slim
 ARG JMETER_VERSION
 
-ENV JMETER_VERSION ${JMETER_VERSION:-5.4.1}
+ENV JMETER_VERSION ${JMETER_VERSION:-5.4.2}
 ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
 ENV PATH $JMETER_HOME/bin:$PATH
 
@@ -22,8 +22,8 @@ RUN wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_V
     wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-1.4.0.zip && \
     unzip -o JMeterPlugins-ExtrasLibs-1.4.0.zip -d /jmeter/apache-jmeter-$JMETER_VERSION
 
-WORKDIR $JMETER_HOME 
-    
+WORKDIR $JMETER_HOME
+
 COPY config/user.properties bin/user.properties
 COPY scripts/install_plugin-manager.sh .
 COPY scripts/docker-entrypoint.sh /docker-entrypoint.sh
