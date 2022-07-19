@@ -33,7 +33,7 @@ server:
 image:
   pullPolicy: IfNotPresent
   repository: "tomdann/jmeter"
-  tag: "5.4.3"
+  tag: "5.5"
 
 disruption:
   maxUnavailable: 0
