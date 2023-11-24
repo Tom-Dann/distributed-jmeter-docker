@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM openjdk:11-jre-slim
 ARG JMETER_VERSION
 
 ENV JMETER_VERSION ${JMETER_VERSION:-5.5}
